@@ -5,8 +5,9 @@ from opsdroid.matchers import match_regex
 async def reload(opsdroid, config, message):
     await message.respond("Reloading skills")
     opsdroid.restart()
-    await message.respond("Reloaded")
 
-@match_regex(r'supertest')
-async def reloadtest(opsdroid, config, message):
-    await message.respond("Testytesttest")
+
+@match_regex(r'quit')
+async def reload(opsdroid, config, message):
+    await message.respond("Stopping opsdroid")
+    opsdroid.stop()
