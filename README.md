@@ -22,6 +22,7 @@ Reloads all config.
 >
 > opsdroid: Reloading skills
 
+
 #### `quit`
 
 Exits opsdroid.
@@ -29,6 +30,15 @@ Exits opsdroid.
 > user: quit
 >
 > opsdroid: Stopping opsdroid
+
+
+## `help skills`
+Get list of active skills
+
+> user: help skills
+>
+>opsdroid: You have the following skills active: ['hello', 'dance', 'loudnoises', 'devtools']
+
 
 ### `help`
 
@@ -65,12 +75,6 @@ Get useful information about opsdroid.
 >Get opsdroid working on your computer: 
 >Opsdroid Desktop: https://github.com/opsdroid/opsdroid-desktop
 
-## `help skills`
-Get list of active skills
-
-> user: help skills
->
->opsdroid: You have the following skills active: ['hello', 'dance', 'loudnoises', 'devtools']
 
 ## License
 
