@@ -61,4 +61,4 @@ async def help_skill(opsdroid, config, message):
 @match_regex(r'clear$')
 async def clear_screen(opsdroid, config, message):
     """Only works on the shell connector"""
-    await message.respond("\n"*25)
+    await message.respond("\033c")

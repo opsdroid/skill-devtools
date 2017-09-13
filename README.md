@@ -32,7 +32,15 @@ Exits opsdroid.
 > opsdroid: Stopping opsdroid
 
 
-## `help skills`
+#### `clear`
+Clears terminal window (only works in shell)
+
+> user: clear
+>
+> opsdroid: 
+
+
+#### `help skills`
 Get list of active skills
 
 > user: help skills
@@ -40,7 +48,7 @@ Get list of active skills
 >opsdroid: You have the following skills active: ['hello', 'dance', 'loudnoises', 'devtools']
 
 
-### `help`
+#### `help`
 
 Get useful information about opsdroid.
 
