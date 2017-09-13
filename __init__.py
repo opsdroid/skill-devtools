@@ -9,12 +9,12 @@ async def reload(opsdroid, config, message):
 
 
 @match_regex(r'quit')
-async def reload(opsdroid, config, message):
+async def stop_opsdroid(opsdroid, config, message):
     await message.respond("Stopping opsdroid")
     opsdroid.stop()
 
 
-@match_regex(r'^help')
+@match_regex(r'help$')
 async def help(opsdroid, config, message):
     await message.respond(textwrap.dedent("""\
     OpsDroid - An open source chat bot framework written in python.
@@ -47,7 +47,7 @@ Opsdroid Desktop: https://github.com/opsdroid/opsdroid-desktop
 """))
 
 
-@match_regex(r'help skill')
+@match_regex(r'^help skill(.*?)$')
 async def help_skill(opsdroid, config, message):
     skill_names = []
 
@@ -56,3 +56,9 @@ async def help_skill(opsdroid, config, message):
             skill_names.append(opsdroid.skills[i]['config']['name'])
 
     await message.respond("You have the following skills active: {}".format(skill_names))
+
+
+@match_regex(r'clear$')
+async def clear_screen(opsdroid, config, message):
+    """Only works on the shell connector"""
+    await message.respond("\n"*25)
