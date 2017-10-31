@@ -82,8 +82,3 @@ Get useful information about opsdroid.
 >
 >Get opsdroid working on your computer: 
 >Opsdroid Desktop: https://github.com/opsdroid/opsdroid-desktop
-
-
-## License
-
-GNU General Public License Version 3 (GPLv3)
