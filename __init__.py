@@ -5,13 +5,13 @@ import textwrap
 @match_regex(r'reload')
 async def reload(opsdroid, config, message):
     await message.respond("Reloading skills")
-    opsdroid.restart()
+    await opsdroid.reload()
 
 
 @match_regex(r'quit')
 async def stop_opsdroid(opsdroid, config, message):
     await message.respond("Stopping opsdroid")
-    opsdroid.stop()
+    opsdroid.exit()
 
 
 @match_regex(r'help$')
@@ -19,9 +19,9 @@ async def help(opsdroid, config, message):
     await message.respond(textwrap.dedent("""\
     OpsDroid - An open source chat bot framework written in python.
 
-OpsDroid comes with a few simple commands out of the box. 
+OpsDroid comes with a few simple commands out of the box.
 With "Hello" Opsdroid will greet users when they say hello.
-With "Goodbye" Opsdroid will say goodbye to them when they leave. 
+With "Goodbye" Opsdroid will say goodbye to them when they leave.
 With "when did you last see <user>" Opsdroid can tell you when the user was online.
 With "ALLCAPSTEXT" Opsdroid will complain with an image.
 With "Dance" Opsdroid will even dance!
@@ -42,7 +42,7 @@ Blog:  https://medium.com/opsdroid
 Youtube: https://www.youtube.com/channel/UC0FeGkDF7FrshmzAsb9lDvw
 GitHub: https://github.com/opsdroid
 
-Get opsdroid working on your computer: 
+Get opsdroid working on your computer:
 Opsdroid Desktop: https://github.com/opsdroid/opsdroid-desktop
 """))
 
