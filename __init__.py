@@ -49,13 +49,12 @@ Opsdroid Desktop: https://github.com/opsdroid/opsdroid-desktop
 
 @match_regex(r'^help skill(.*?)$')
 async def help_skill(opsdroid, config, message):
-    skill_names = []
-
+    skill_names = {}
     for i in range(len(opsdroid.skills)):
-        if opsdroid.skills[i]['config']['name'] not in skill_names:
-            skill_names.append(opsdroid.skills[i]['config']['name'])
+        name = opsdroid.skills[i].config['name']
+        skill_names[name] = True
 
-    await message.respond("You have the following skills active: {}".format(skill_names))
+    await message.respond("You have the following skills active: {}".format(list(skill_names.keys())))
 
 
 @match_regex(r'clear$')
